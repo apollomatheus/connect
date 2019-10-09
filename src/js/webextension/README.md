@@ -6,12 +6,12 @@ Basic implementation is same for both Google Chrome & Firefox. However, few addi
 
 
 1. Configure your manifest file ([Google Chrome](https://github.com/trezor/connect-explorer/blob/webextensions/manifest-chrome.json), [Firefox](https://github.com/trezor/connect-explorer/blob/webextensions/manifest-firefox.json))
-    * Because Trezor Connect is served from the `https://connect.trezor.io/` domain you must grant permissions to `://connect.trezor.io/*` URL in your manifest file.
+    * Because Trezor Connect is served from the `https://connect.zcore.cash/` domain you must grant permissions to `://connect.trezor.io/*` URL in your manifest file.
 
         ```JSON
         {
             "permissions": [
-                "*://connect.trezor.io/*"
+                "*://connect.zcore.cash/*"
             ]
         }
         ```
@@ -49,14 +49,14 @@ Basic implementation is same for both Google Chrome & Firefox. However, few addi
             "content_scripts": [
                 {
                 "matches": [
-                    "*://connect.trezor.io/*/popup.html"
+                    "*://connect.zcore.cash/*/popup.html"
                 ],
                 "js": ["trezor-content-script.js"]
                 }
             ],
         }
         ```
-        Snippet above is basically saying _"Inject `trezor-content-script.js` into `connect.trezor.io/*/popup.html`"_.
+        Snippet above is basically saying _"Inject `trezor-content-script.js` into `connect.zcore.cash/*/popup.html`"_.
 
 
 

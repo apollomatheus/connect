@@ -1,7 +1,7 @@
 const VERSION = '8.0.6';
 const versionN = VERSION.split('.').map(s => parseInt(s));
 const DIRECTORY = `${ versionN[0] }${ (versionN[1] > 0 ? `.${versionN[1]}` : '') }/`;
-const url = 'https://connect.trezor.io/' + DIRECTORY;
+const url = 'https://connect.zcore.cash/' + DIRECTORY;
 
 /* Handling messages from usb permissions iframe */
 function switchToPopupTab(event) {

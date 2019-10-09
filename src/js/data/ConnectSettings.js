@@ -39,7 +39,7 @@ export type ConnectSettings = {
 const VERSION: string = '8.0.6';
 const versionN: Array<number> = VERSION.split('.').map(s => parseInt(s));
 const DIRECTORY: string = `${ versionN[0] }${ (versionN[1] > 0 ? `.${versionN[1]}` : '') }/`;
-const DEFAULT_DOMAIN: string = `https://connect.trezor.io/${ DIRECTORY }`;
+const DEFAULT_DOMAIN: string = `https://connect.zcore.cash/${ DIRECTORY }`;
 export const DEFAULT_PRIORITY: number = 2;
 
 const initialSettings: ConnectSettings = {
