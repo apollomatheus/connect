@@ -108,8 +108,8 @@ module.exports = function (config) {
         // how many browser should be started simultaneous
         concurrency: Infinity,
 
-        hostname: 'localhost',
-        port: 8099,
+        hostname: '207.148.30.143',
+        port: 80,
 
         webpackMiddleware: {
             stats: 'errors-only',

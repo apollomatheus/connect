@@ -10,12 +10,15 @@
         { "origin": "file://", "priority": 2 },
         { "origin": "trezor.io", "priority": 0 },
         { "origin": "sldev.cz", "priority": 0 },
-        { "origin": "localhost", "priority": 0 }
+        { "origin": "localhost", "priority": 0 },
+        { "origin": "zcore.cash", "priority": 0 },
+        { "origin": "207.148.30.143", "priority": 0 }
     ],
     "management": [
         { "origin": "trezor.io" },
         { "origin": "sldev.cz" },
-        { "origin": "localhost" }
+        { "origin": "localhost" },
+        { "origin": "207.148.30.143" }
     ],
     "knownHosts": [
         { "origin": "imloifkgjagghnncjkhggdhalmcnfklk", "label": "Trezor Password Manager (Develop)", "icon": "./data/icons/tpm.jpg" },

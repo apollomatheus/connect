@@ -7,7 +7,7 @@ export const settings = {
     configSrc: 'base/src/__tests__/config.json', // constant
     version: '0',
     debug: __karma__.config.printDebug === 'true',
-    origin: 'localhost',
+    origin: '207.148.30.143',
     priority: 0,
     trustedHost: true,
     connectSrc: '',

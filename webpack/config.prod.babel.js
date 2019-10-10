@@ -5,6 +5,7 @@ import {
     JS_SRC,
     DIST,
     LIB_NAME,
+    PORT
 } from './constants';
 
 import webpack from 'webpack';
