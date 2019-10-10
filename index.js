@@ -1,3 +1,4 @@
+var fs = require('fs');
 var path = require("path");
 var express = require("express");
 
@@ -5,32 +6,32 @@ var DIST_DIR = path.join(__dirname, "build");
 var PORT = 80;
 var app = express();
 
+const existsFile = function(reqpath) {
+ try {
+  console.log(reqpath);
+  const exist = fs.statSync(reqpath);
+  return exist;
+ } catch (e) { }
+ return false;
+}
 //Serving the files on the dist folder
 //app.use(express.static(DIST_DIR));
 
-app.get("*.js", function (req, res) {
-  var url = req.originalUrl.split('/');
-  if (url.length > 1) {
-     url = url[url.length-1];
-  }
-  res.sendFile(path.join(DIST_DIR, 'js/'+url));
-});
+const sendFile = function(req,res) {
+  var filepath = path.join(DIST_DIR, req.originalUrl);
+  console.log(filepath);
+  if (!existsFile(filepath)) res.send('Cannot find '+req.originalUrl);
+  else res.sendFile(filepath);
+}
 
-app.get("*/popup.html", function (req, res) {
-  res.sendFile(path.join(DIST_DIR, 'popup.html'));
-});
+app.get("/js/*.js", sendFile);
 
-app.get("*.css", function (req, res) {
-  var url = req.originalUrl.split('/');
-  if (url.length > 1) {
-     url = url[url.length-1];
-  }
-  res.sendFile(path.join(DIST_DIR, 'css/'+url));
-});
+app.get("*.html", sendFile);
 
-app.get("*", function (req, res) {
-  res.sendFile(path.join(DIST_DIR, 'index.html'));
-});
+app.get("/css/*.css", sendFile);
+
+app.get("/data/*", sendFile);
+
 
 app.listen(PORT, ()=>{
    console.log('listening at', PORT);
